@@ -1,4 +1,6 @@
-{
+import { DataSource } from 'typeorm';
+
+const source = new DataSource({
   "username": "postgres",
   "password": "docker",
 
@@ -8,8 +10,8 @@
   "port": 5432,
   "database": "queries_challenge",
   "entities": ["./src/modules/**/entities/*.ts"],
-  "migrations": ["./src/database/migrations/*.ts"],
-  "cli": {
-    "migrationsDir": "./src/database/migrations"
-  }
-}
+  "migrations": ["./src/database/migrations/*.ts"]
+});
+
+export default source;
+
